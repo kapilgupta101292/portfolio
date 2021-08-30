@@ -1,5 +1,5 @@
 import React from 'react';
-import BaseLayout from '../components/layouts/BaseLayout';
+import BaseLayout from '../components/layout/BaseLayout';
 import { Container, Row, Col } from 'reactstrap';
 
 class Index extends React.Component {
