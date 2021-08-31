@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React from 'react';
-import BaseLayout from "../../components/layout/BaseLayout";
+import BaseLayout from "@/components/layout/BaseLayout";
 import Link from 'next/link';
-import BasePage from '../../public/BasePage';
+import BasePage from '@/public/BasePage';
 
 const Portfolios = ({posts}) => {
 
