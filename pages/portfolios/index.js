@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import BaseLayout from "../../components/layout/BaseLayout";
 import Link from 'next/link';
-
+import BasePage from '../../public/BasePage';
 
 const Portfolios = ({posts}) => {
 
@@ -19,8 +19,9 @@ const Portfolios = ({posts}) => {
     
     return (
         <BaseLayout>
+        <BasePage>
         <ul>{renderPosts()}</ul>
-       
+        </BasePage>
         </BaseLayout>
     )
 }
