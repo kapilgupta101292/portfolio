@@ -1,23 +1,11 @@
-import { useEffect, useState } from 'react';
 import BaseLayout from "@/components/layout/BaseLayout";
 import Link from 'next/link';
 import BasePage from '@/public/BasePage';
+import { useGetPosts } from '@/actions';
 
 const Portfolios = () => {
-    const [posts, setPosts] = useState([]);
-    
-    useEffect(() => {
-        async function getPosts() {
-            const res = await fetch('/api/v1/posts');
-            const data = await res.json();
-            debugger;
-            setPosts(data);
-        }
-        getPosts();
-    }, []);
-
-    
-    const renderPosts = () => {
+   const { posts, error } = useGetPosts(); 
+   const renderPosts = () => {
         return posts.map(post => 
         <li key={post.id}>
             <Link href={`/portfolios/${post.id}`}>
@@ -30,7 +18,15 @@ const Portfolios = () => {
     return (
         <BaseLayout>
         <BasePage>
+        {
+            posts && 
         <ul>{renderPosts()}</ul>
+
+}
+{
+    error &&
+    <div className="alert alert-danger">{error.message}</div>
+}
         </BasePage>
         </BaseLayout>
     )
