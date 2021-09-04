@@ -7,7 +7,7 @@ const PortFolioDetail = () => {
     const router = useRouter();
     debugger;
     const {data: portfolio, error, loading } = 
-    useGetData(router.query.id ? `api/v1/posts/${router.query.id}` : null);
+    useGetData(router.query.id ? `/api/v1/posts/${router.query.id}` : null);
     
     return (
         <BaseLayout>
