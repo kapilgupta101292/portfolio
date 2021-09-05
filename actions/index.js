@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 export const useGetData = (url) => {
+    
     const [data, setData] = useState();
     const [error, setError] = useState();
     const [loading, setLoading] = useState(true);
