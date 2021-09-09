@@ -1,10 +1,13 @@
 const express = require('express');
 const server = express();
 
+const portfolioRoutes = require('./routes/portfolios');
 
 server.get('/test', (req, res) => {
     return res.json({message: 'test is working!'});
 })
+
+server.use('/api/v1', portfolioRoutes);
 
 
 const PORT = parseInt(process.env.PORT, 10) || 3001;
