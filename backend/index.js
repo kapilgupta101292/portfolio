@@ -7,7 +7,7 @@ const portfolioRoutes = require('./routes/portfolios');
 async function run() {
     await connect();
 
-    server.use('/api/v1', portfolioRoutes);
+    server.use('/api/v1/portfolios', portfolioRoutes);
 
 
     const PORT = parseInt(process.env.PORT, 10) || 3001;
